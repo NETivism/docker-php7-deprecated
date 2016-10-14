@@ -37,7 +37,10 @@ RUN \
 RUN \
   curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
   composer global require drush/drush:8.1.5 && \
-  git clone https://github.com/NETivism/docker-sh.git /home/docker
+  git clone https://github.com/NETivism/docker-sh.git /home/docker && \
+  cd /root/.composer && \
+  find . | grep .git | xargs rm -rf && \
+  rm -rf /root/.composer/cache/*
 
 ### PHP FPM Config
 # remove default enabled site
