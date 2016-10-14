@@ -27,6 +27,7 @@ RUN \
     php7.0-gd \
     php7.0-mcrypt \
     php7.0-mysql \
+    php7.0-xml \
     php7.0-memcached \
     php7.0-cli \
     php7.0-fpm \
@@ -46,9 +47,9 @@ RUN \
 # remove default enabled site
 RUN \
   mkdir -p /var/www/html/log/supervisor && \
-  cp -f /home/docker/php/default55.ini /etc/php/7.0/docker_setup.ini && \
+  cp -f /home/docker/php/default70.ini /etc/php/7.0/docker_setup.ini && \
   ln -s /etc/php/7.0/docker_setup.ini /etc/php/7.0/fpm/conf.d/ && \
-  cp -f /home/docker/php/default55_cli.ini /etc/php/7.0/cli/conf.d/ && \
+  cp -f /home/docker/php/default70_cli.ini /etc/php/7.0/cli/conf.d/ && \
   cp -f /home/docker/php/default_opcache_blacklist /etc/php/7.0/opcache_blacklist && \
   sed -i 's/^listen = .*/listen = 80/g' /etc/php/7.0/fpm/pool.d/www.conf && \
   sed -i 's/^pm = .*/pm = ondemand/g' /etc/php/7.0/fpm/pool.d/www.conf && \
