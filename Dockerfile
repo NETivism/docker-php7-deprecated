@@ -27,6 +27,7 @@ RUN \
     php7.0-gd \
     php7.0-mcrypt \
     php7.0-mysql \
+    php7.0-mbstring \
     php7.0-xml \
     php7.0-memcached \
     php7.0-cli \
