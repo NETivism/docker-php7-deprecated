@@ -24,6 +24,7 @@ RUN \
     rsyslog \
     php7.0 \
     php7.0-curl \
+    php7.0-imap \
     php7.0-gd \
     php7.0-mcrypt \
     php7.0-mysql \
